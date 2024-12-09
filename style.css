@@ -1,0 +1,105 @@
+:root { /* Definimos los colores principales a usar como variables*/
+    --primary-color: hsl(210, 70%, 50%);
+    --background-color: hsl(219, 68%, 90%);
+    --text-color: hsl(210, 15%, 20%);
+    --hover-color: hsl(210, 80%, 60%);
+    --main-font: Arial, sans-serif; /* En el caso que no se encuentre Arial, se usará sans-serif */
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--main-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex; /* Uso de flexbox */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  #container {
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  header {
+    margin-bottom: 2.5rem;
+  }
+  
+  header h1 {
+    font-size: 4rem;
+    color: var(--text-color);
+  }
+  
+  .name {
+    font-size: 2rem; /* Tamaño del nombre*/
+    color: var(--text-color);
+  }
+
+  .uvus {
+    font-size: 1.5rem; /* Tamaño del uvus */
+    color: var(--text-color);
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 2rem; /* Espaciado entre los botones */
+  }
+  
+  .exercise-button {
+    width: 18rem;
+    height: 15rem;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+  }
+  
+  .exercise-button:hover { /* Transicion con hover */
+    background-color: var(--hover-color);
+    transform: scale(1.08);
+  }
+
+  .button-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.8rem; /* Espaciado entre el título y la dificultad */
+  }
+
+  .button-title {
+    font-weight: bold;
+    font-size: 2rem; /* Tamaño del título principal */
+    margin: 0;
+  }
+  
+  .button-subtitle {
+    font-size: 1.2rem; /* Tamaño de la dificultad */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem; /* Espaciado entre texto e iconos */
+    font-weight: normal;
+  }
+  
+  .bi {
+    font-size: 1rem; /* Tamaño de las estrellas */
+  }
+  
+  .exercise-button:active { /* Transicion al clicar */
+    transform: scale(1.04);
+  }

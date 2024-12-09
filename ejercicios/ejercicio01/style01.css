@@ -1,0 +1,277 @@
+/* Variables globales */
+:root {
+  --main-font: Arial, sans-serif;
+  --bg-color: hsl(219, 68%, 90%); /* Fondo claro */
+  --text-color: hsl(220, 20%, 20%); /* Texto oscuro */
+  --button-bg: hsl(200, 70%, 50%); /* Fondo botones */
+  --button-hover-bg: hsl(200, 80%, 40%); /* Fondo botones al pasar el ratón */
+  --button-text: #ffffff; /* Texto de los botones */
+
+  --circle-color: hsl(200, 70%, 50%); /* Color principal para los 7 círculos */
+  --highlight-color: hsl(
+    0,
+    70%,
+    50%
+  ); /* Color distinto para el último círculo */
+  --circle-size: 2rem; /* Tamaño de los círculos */
+  --animation-duration: 2s; /* Duración de la animación */
+  --animation-size: 26rem;
+}
+
+/* General */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Alinea el contenido al final */
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Título */
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/* Botones */
+button {
+  width: 7rem;
+  height: 3rem;
+  margin: 0.5rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.animation-container {
+  position: relative;
+  width: var(--animation-size);
+  height: var(--animation-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Circulo rojo */
+#circle1 {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: var(--highlight-color);
+  border-radius: 50%;
+  position: absolute;
+  animation: animation-circle1 var(--animation-duration) infinite alternate
+    ease-in-out;
+}
+
+/* Resto de circulos */
+#circle2 {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: var(--circle-color);
+  border-radius: 50%;
+  position: absolute;
+  animation: animation-circle2 var(--animation-duration) infinite alternate
+    ease-in-out;
+  animation-delay: calc(-1 * var(--animation-duration) / 8);
+}
+
+#circle3 {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: var(--circle-color);
+  border-radius: 50%;
+  position: absolute;
+  animation: animation-circle3 var(--animation-duration) infinite alternate
+    ease-in-out;
+  animation-delay: calc(-2 * var(--animation-duration) / 8);
+}
+
+#circle4 {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: var(--circle-color);
+  border-radius: 50%;
+  position: absolute;
+  animation: animation-circle4 var(--animation-duration) infinite alternate
+    ease-in-out;
+  animation-delay: calc(-3 * var(--animation-duration) / 8);
+}
+
+#circle5 {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: var(--circle-color);
+  border-radius: 50%;
+  position: absolute;
+  animation: animation-circle5 var(--animation-duration) infinite alternate
+    ease-in-out;
+  animation-delay: calc(-4 * var(--animation-duration) / 8);
+}
+
+#circle6 {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: var(--circle-color);
+  border-radius: 50%;
+  position: absolute;
+  animation: animation-circle6 var(--animation-duration) infinite alternate
+    ease-in-out;
+  animation-delay: calc(-5 * var(--animation-duration) / 8);
+}
+
+#circle7 {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: var(--circle-color);
+  border-radius: 50%;
+  position: absolute;
+  animation: animation-circle7 var(--animation-duration) infinite alternate
+    ease-in-out;
+  animation-delay: calc(-6 * var(--animation-duration) / 8);
+}
+
+#circle8 {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: var(--circle-color);
+  border-radius: 50%;
+  position: absolute;
+  animation: animation-circle8 var(--animation-duration) infinite alternate
+    ease-in-out;
+  animation-delay: calc(-7 * var(--animation-duration) / 8);
+}
+
+@keyframes animation-circle1 {
+  0% {
+    transform: translate(
+      calc(1 * var(--animation-size) / 2),
+      calc(0 * var(--animation-size) / 2)
+    );
+  }
+  100% {
+    transform: translate(
+      calc(-1 * var(--animation-size) / 2),
+      calc(-0 * var(--animation-size) / 2)
+    );
+  }
+}
+
+@keyframes animation-circle2 {
+  0% {
+    transform: translate(
+      calc(0.9239 * var(--animation-size) / 2),
+      calc(0.3827 * var(--animation-size) / 2)
+    );
+  }
+  100% {
+    transform: translate(
+      calc(-0.9239 * var(--animation-size) / 2),
+      calc(-0.3827 * var(--animation-size) / 2)
+    );
+  }
+}
+
+@keyframes animation-circle3 {
+  0% {
+    transform: translate(
+      calc(0.7071 * var(--animation-size) / 2),
+      calc(0.7071 * var(--animation-size) / 2)
+    );
+  }
+  100% {
+    transform: translate(
+      calc(-0.7071 * var(--animation-size) / 2),
+      calc(-0.7071 * var(--animation-size) / 2)
+    );
+  }
+}
+
+@keyframes animation-circle4 {
+  0% {
+    transform: translate(
+      calc(0.3827 * var(--animation-size) / 2),
+      calc(0.9239 * var(--animation-size) / 2)
+    );
+  }
+  100% {
+    transform: translate(
+      calc(-0.3827 * var(--animation-size) / 2),
+      calc(-0.9239 * var(--animation-size) / 2)
+    );
+  }
+}
+
+@keyframes animation-circle5 {
+  0% {
+    transform: translate(
+      calc(0 * var(--animation-size) / 2),
+      calc(1 * var(--animation-size) / 2)
+    );
+  }
+  100% {
+    transform: translate(
+      calc(-0 * var(--animation-size) / 2),
+      calc(-1 * var(--animation-size) / 2)
+    );
+  }
+}
+
+@keyframes animation-circle6 {
+  0% {
+    transform: translate(
+      calc(-0.3827 * var(--animation-size) / 2),
+      calc(0.9239 * var(--animation-size) / 2)
+    );
+  }
+  100% {
+    transform: translate(
+      calc(0.3827 * var(--animation-size) / 2),
+      calc(-0.9239 * var(--animation-size) / 2)
+    );
+  }
+}
+
+@keyframes animation-circle7 {
+  0% {
+    transform: translate(
+      calc(-0.7071 * var(--animation-size) / 2),
+      calc(0.7071 * var(--animation-size) / 2)
+    );
+  }
+  100% {
+    transform: translate(
+      calc(0.7071 * var(--animation-size) / 2),
+      calc(-0.7071 * var(--animation-size) / 2)
+    );
+  }
+}
+
+@keyframes animation-circle8 {
+  0% {
+    transform: translate(
+      calc(-0.9239 * var(--animation-size) / 2),
+      calc(0.3827 * var(--animation-size) / 2)
+    );
+  }
+  100% {
+    transform: translate(
+      calc(0.9239 * var(--animation-size) / 2),
+      calc(-0.3827 * var(--animation-size) / 2)
+    );
+  }
+}

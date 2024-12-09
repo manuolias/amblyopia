@@ -1,0 +1,123 @@
+/* Variables globales */
+:root {
+  --main-font: Arial, sans-serif;
+  --bg-color: hsl(219, 68%, 90%);
+  --text-color: hsl(220, 20%, 20%);
+  --button-bg: hsl(200, 70%, 50%);
+  --button-hover-bg: hsl(200, 80%, 40%);
+  --button-text: #ffffff;
+
+  --circle-color1: hsl(11, 100%, 60%);
+  --circle-color2: hsl(221, 66%, 31%);
+  --animation-duration: 6s; /* Duración de la animación */
+  --inner-radius: 4.5rem; /* Radio interno de rotacion */
+  --middle-radius: 6rem; /* Radio intermedio */
+  --outer-radius: 3rem; /* Radio externo de rotacion */
+}
+
+/* General */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Alinea el contenido al final */
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Título */
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/* Botones */
+button {
+  width: 7rem;
+  height: 3rem;
+  margin: 0.5rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.container {
+  width: 70vh;
+  height: 70vh;
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;
+}
+
+.animated-container1 {
+  background-color: aqua;
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;
+  animation: rotateOuter calc(0.7 * var(--animation-duration)) ease-in-out infinite alternate;
+}
+
+.animated-container2 {
+  background-color: blue;
+  position: relative;
+  animation: rotateMiddle calc(1 * var(--animation-duration)) ease-in-out infinite alternate;
+}
+
+.animated-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--circle-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%); /* Centro la particula */
+  animation: rotateOuter calc(0.4 * var(--animation-duration)) ease-in-out infinite alternate;
+}
+
+@keyframes rotateInner {
+  0% {
+    transform: rotate(0deg) translateX(var(--inner-radius));
+  }
+  100% {
+    transform: rotate(-360deg) translateX(var(--inner-radius));
+  }
+}
+
+@keyframes rotateMiddle {
+  0% {
+    transform: rotate(0deg) translateX(var(--middle-radius));
+  }
+  100% {
+    transform: rotate(-360deg) translateX(var(--middle-radius));
+  }
+}
+
+@keyframes rotateOuter {
+  0% {
+    transform: rotate(0deg) translateX(var(--outer-radius));
+    background-color: var(--circle-color1);
+  }
+  50% {
+    transform: rotate(-180deg) translateX(var(--outer-radius));
+    background-color: var(--circle-color2);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(var(--outer-radius));
+    background-color: var(--circle-color1);
+  }
+}
