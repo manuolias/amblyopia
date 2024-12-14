@@ -1,6 +1,6 @@
 const toggleButton = document.getElementById("toggleAnimationButton");
-const animationCircle = document.querySelector(".animated-circle");
-const animationContainer = document.querySelector(".animated-container");
+const animationCircle = document.getElementById("animatedCircle");
+const animationContainer = document.getElementById("animatedContainer");
 const homeButton = document.getElementById("homeButton");
 
 // Estado inicial: animación corriendo

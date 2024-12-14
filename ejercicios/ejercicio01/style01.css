@@ -8,17 +8,19 @@
   --button-text: #ffffff; /* Texto de los botones */
 
   --circle-color: hsl(200, 70%, 50%); /* Color principal para los 7 círculos */
-  --highlight-color: hsl(
-    0,
-    70%,
-    50%
-  ); /* Color distinto para el último círculo */
+  --highlight-color: hsl(0, 70%, 50%); /* Color distinto para el último círculo */
   --circle-size: 2rem; /* Tamaño de los círculos */
   --animation-duration: 2s; /* Duración de la animación */
   --animation-size: 26rem;
 }
 
-/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -68,7 +70,7 @@ button:hover {
 }
 
 /* Circulo rojo */
-#circle1 {
+.circle1 {
   width: var(--circle-size);
   height: var(--circle-size);
   background-color: var(--highlight-color);
@@ -79,94 +81,71 @@ button:hover {
 }
 
 /* Resto de circulos */
-#circle2 {
+
+.circle {
   width: var(--circle-size);
   height: var(--circle-size);
   background-color: var(--circle-color);
   border-radius: 50%;
   position: absolute;
+}
+
+/* Cada circulo tiene un delay distinto */
+.circle2 {
   animation: animation-circle2 var(--animation-duration) infinite alternate
     ease-in-out;
   animation-delay: calc(-1 * var(--animation-duration) / 8);
 }
 
-#circle3 {
-  width: var(--circle-size);
-  height: var(--circle-size);
-  background-color: var(--circle-color);
-  border-radius: 50%;
-  position: absolute;
+.circle3 {
   animation: animation-circle3 var(--animation-duration) infinite alternate
     ease-in-out;
   animation-delay: calc(-2 * var(--animation-duration) / 8);
 }
 
-#circle4 {
-  width: var(--circle-size);
-  height: var(--circle-size);
-  background-color: var(--circle-color);
-  border-radius: 50%;
-  position: absolute;
+.circle4 {
   animation: animation-circle4 var(--animation-duration) infinite alternate
     ease-in-out;
   animation-delay: calc(-3 * var(--animation-duration) / 8);
 }
 
-#circle5 {
-  width: var(--circle-size);
-  height: var(--circle-size);
-  background-color: var(--circle-color);
-  border-radius: 50%;
-  position: absolute;
+.circle5 {
   animation: animation-circle5 var(--animation-duration) infinite alternate
     ease-in-out;
   animation-delay: calc(-4 * var(--animation-duration) / 8);
 }
 
-#circle6 {
-  width: var(--circle-size);
-  height: var(--circle-size);
-  background-color: var(--circle-color);
-  border-radius: 50%;
-  position: absolute;
+.circle6 {
   animation: animation-circle6 var(--animation-duration) infinite alternate
     ease-in-out;
   animation-delay: calc(-5 * var(--animation-duration) / 8);
 }
 
-#circle7 {
-  width: var(--circle-size);
-  height: var(--circle-size);
-  background-color: var(--circle-color);
-  border-radius: 50%;
-  position: absolute;
+.circle7 {
   animation: animation-circle7 var(--animation-duration) infinite alternate
     ease-in-out;
   animation-delay: calc(-6 * var(--animation-duration) / 8);
 }
 
-#circle8 {
-  width: var(--circle-size);
-  height: var(--circle-size);
-  background-color: var(--circle-color);
-  border-radius: 50%;
-  position: absolute;
+.circle8 {
   animation: animation-circle8 var(--animation-duration) infinite alternate
     ease-in-out;
   animation-delay: calc(-7 * var(--animation-duration) / 8);
 }
 
+
+/* Las animaciones toman como parametro el seno y el coseno */
 @keyframes animation-circle1 {
   0% {
     transform: translate(
-      calc(1 * var(--animation-size) / 2),
-      calc(0 * var(--animation-size) / 2)
+      calc(calc(1 * cos(0deg)) * var(--animation-size) / 2),
+      calc(calc(1 * sin(0deg)) * var(--animation-size) / 2)
     );
   }
   100% {
     transform: translate(
-      calc(-1 * var(--animation-size) / 2),
-      calc(-0 * var(--animation-size) / 2)
+      calc(calc(-1 * cos(0deg)) * var(--animation-size) / 2),
+      calc(calc(-1 * sin(0deg)) * var(--animation-size) / 2)
     );
   }
 }
@@ -174,14 +153,14 @@ button:hover {
 @keyframes animation-circle2 {
   0% {
     transform: translate(
-      calc(0.9239 * var(--animation-size) / 2),
-      calc(0.3827 * var(--animation-size) / 2)
+      calc(calc(1 * cos(22.5deg)) * var(--animation-size) / 2),
+      calc(calc(1 * sin(22.5deg)) * var(--animation-size) / 2)
     );
   }
   100% {
     transform: translate(
-      calc(-0.9239 * var(--animation-size) / 2),
-      calc(-0.3827 * var(--animation-size) / 2)
+      calc(calc(-1 * cos(22.5deg)) * var(--animation-size) / 2),
+      calc(calc(-1 * sin(22.5deg)) * var(--animation-size) / 2)
     );
   }
 }
@@ -189,14 +168,14 @@ button:hover {
 @keyframes animation-circle3 {
   0% {
     transform: translate(
-      calc(0.7071 * var(--animation-size) / 2),
-      calc(0.7071 * var(--animation-size) / 2)
+      calc(calc(1 * cos(45deg)) * var(--animation-size) / 2),
+      calc(calc(1 * sin(45deg)) * var(--animation-size) / 2)
     );
   }
   100% {
     transform: translate(
-      calc(-0.7071 * var(--animation-size) / 2),
-      calc(-0.7071 * var(--animation-size) / 2)
+      calc(calc(-1 * cos(45deg)) * var(--animation-size) / 2),
+      calc(calc(-1 * sin(45deg)) * var(--animation-size) / 2)
     );
   }
 }
@@ -204,14 +183,14 @@ button:hover {
 @keyframes animation-circle4 {
   0% {
     transform: translate(
-      calc(0.3827 * var(--animation-size) / 2),
-      calc(0.9239 * var(--animation-size) / 2)
+      calc(calc(1 * cos(67.5deg)) * var(--animation-size) / 2),
+      calc(calc(1 * sin(67.5deg)) * var(--animation-size) / 2)
     );
   }
   100% {
     transform: translate(
-      calc(-0.3827 * var(--animation-size) / 2),
-      calc(-0.9239 * var(--animation-size) / 2)
+      calc(calc(-1 * cos(67.5deg)) * var(--animation-size) / 2),
+      calc(calc(-1 * sin(67.5deg)) * var(--animation-size) / 2)
     );
   }
 }
@@ -219,14 +198,14 @@ button:hover {
 @keyframes animation-circle5 {
   0% {
     transform: translate(
-      calc(0 * var(--animation-size) / 2),
-      calc(1 * var(--animation-size) / 2)
+      calc(calc(1 * cos(90deg)) * var(--animation-size) / 2),
+      calc(calc(1 * sin(90deg)) * var(--animation-size) / 2)
     );
   }
   100% {
     transform: translate(
-      calc(-0 * var(--animation-size) / 2),
-      calc(-1 * var(--animation-size) / 2)
+      calc(calc(-1 * cos(90deg)) * var(--animation-size) / 2),
+      calc(calc(-1 * sin(90deg)) * var(--animation-size) / 2)
     );
   }
 }
@@ -234,14 +213,14 @@ button:hover {
 @keyframes animation-circle6 {
   0% {
     transform: translate(
-      calc(-0.3827 * var(--animation-size) / 2),
-      calc(0.9239 * var(--animation-size) / 2)
+      calc(calc(1 * cos(112.5deg)) * var(--animation-size) / 2),
+      calc(calc(1 * sin(112.5deg)) * var(--animation-size) / 2)
     );
   }
   100% {
     transform: translate(
-      calc(0.3827 * var(--animation-size) / 2),
-      calc(-0.9239 * var(--animation-size) / 2)
+      calc(calc(-1 * cos(112.5deg)) * var(--animation-size) / 2),
+      calc(calc(-1 * sin(112.5deg)) * var(--animation-size) / 2)
     );
   }
 }
@@ -249,14 +228,14 @@ button:hover {
 @keyframes animation-circle7 {
   0% {
     transform: translate(
-      calc(-0.7071 * var(--animation-size) / 2),
-      calc(0.7071 * var(--animation-size) / 2)
+      calc(calc(1 * cos(135deg)) * var(--animation-size) / 2),
+      calc(calc(1 * sin(135deg)) * var(--animation-size) / 2)
     );
   }
   100% {
     transform: translate(
-      calc(0.7071 * var(--animation-size) / 2),
-      calc(-0.7071 * var(--animation-size) / 2)
+      calc(calc(-1 * cos(135deg)) * var(--animation-size) / 2),
+      calc(calc(-1 * sin(135deg)) * var(--animation-size) / 2)
     );
   }
 }
@@ -264,14 +243,14 @@ button:hover {
 @keyframes animation-circle8 {
   0% {
     transform: translate(
-      calc(-0.9239 * var(--animation-size) / 2),
-      calc(0.3827 * var(--animation-size) / 2)
+      calc(calc(1 * cos(157.5deg)) * var(--animation-size) / 2),
+      calc(calc(1 * sin(157.5deg)) * var(--animation-size) / 2)
     );
   }
   100% {
     transform: translate(
-      calc(0.9239 * var(--animation-size) / 2),
-      calc(-0.3827 * var(--animation-size) / 2)
+      calc(calc(-1 * cos(157.5deg)) * var(--animation-size) / 2),
+      calc(calc(-1 * sin(157.5deg)) * var(--animation-size) / 2)
     );
   }
 }

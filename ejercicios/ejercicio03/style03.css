@@ -15,7 +15,13 @@
   --outer-radius: 3rem; /* Radio externo de rotacion */
 }
 
-/* General */
+* {
+  /* outline: 2px solid red; Visualizar todos los containers girando */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -24,7 +30,7 @@ body {
   color: var(--text-color);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Alinea el contenido al final */
+  justify-content: flex-end; 
   align-items: center;
   min-height: 100vh;
   text-align: center;
@@ -55,37 +61,32 @@ button:hover {
   background-color: var(--button-hover-bg);
 }
 
+/* Contiene la animación */
 .container {
   width: 70vh;
   height: 70vh;
   display: flex;
-  justify-content: center; /* Centrado horizontal */
+  justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
+/* Elementos animados */
 .animated-container1 {
-  background-color: aqua;
-  display: flex;
-  justify-content: center; /* Centrado horizontal */
-  align-items: center;
-  animation: rotateOuter calc(0.7 * var(--animation-duration)) ease-in-out infinite alternate;
+  animation: rotateInner calc(0.7 * var(--animation-duration)) ease-in-out infinite alternate;
 }
 
 .animated-container2 {
-  background-color: blue;
-  position: relative;
   animation: rotateMiddle calc(1 * var(--animation-duration)) ease-in-out infinite alternate;
 }
 
 .animated-circle {
-  position: absolute;
   top: 50%;
   left: 50%;
   width: 2rem;
   height: 2rem;
   background-color: var(--circle-color);
   border-radius: 50%;
-  transform: translate(-50%, -50%); /* Centro la particula */
   animation: rotateOuter calc(0.4 * var(--animation-duration)) ease-in-out infinite alternate;
 }
 
